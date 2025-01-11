@@ -162,8 +162,19 @@ SELECT * FROM students WHERE grade = 'A' AND course = 'Physics'
 
 SELECT * from students WHERE blood_group = 'A+'
 
-SELECT * from students WHERE (country = 'USA' OR country = 'Australia')
+SELECT *
+from students
+WHERE (
+        country = 'USA'
+        OR country = 'Australia'
+    )
 
-SELECT * FROM students WHERE (country = 'USA' OR country = 'Australia') and age = 20
+SELECT *
+FROM students
+WHERE (
+        country = 'USA'
+        OR country = 'Australia'
+    )
+    and age = 20
 
 SELECT * FROM students WHERE age > 21 and course = 'Mathematics'
