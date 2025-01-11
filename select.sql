@@ -181,8 +181,32 @@ SELECT * FROM students WHERE age > 21 and course = 'Mathematics'
 
 SELECT * from students WHERE NOT country = 'USA'
 
----- not operators ----------------
+---- todo not operators ----------------
 
 SELECT * FROM students WHERE email is not NULL
 
-SELECT COALESCE(email,'email') from students
+SELECT COALESCE(email, 'email') from students
+
+-------------todo IN operator-----------------
+
+-- SELECT * from students WHERE (country = 'USA' OR country = 'Australia')
+-- we can use IN operator when we need add multiple or operators
+SELECT * from students WHERE country IN ('USA', 'Australia')
+
+SELECT * from students WHERE country NOT IN ('USA', 'Australia')
+
+------------------todo between operator ---------------
+-- select student whose age is between 20 and 22
+
+SELECT * FROM students WHERE age BETWEEN 20 AND 22
+
+----------------- todo like operator(case sensitive)----------------
+SELECT * FROM students WHERE first_name like 'J%'
+
+SELECT *
+FROM students
+WHERE
+    first_name like '__a%' --(__) means two character before a character
+
+----------------- todo ilike operator (not case sensitive)----------------
+SELECT * FROM students WHERE first_name ilike 'j%'
