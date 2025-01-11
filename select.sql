@@ -5,7 +5,7 @@ CREATE TABLE students (
     age INT CHECK (age >= 20),
     grade CHAR(2),
     course VARCHAR(50),
-    email VARCHAR(100) UNIQUE,
+    email VARCHAR(100),
     dob DATE,
     blood_group VARCHAR(5),
     country VARCHAR(50)
@@ -178,3 +178,11 @@ WHERE (
     and age = 20
 
 SELECT * FROM students WHERE age > 21 and course = 'Mathematics'
+
+SELECT * from students WHERE NOT country = 'USA'
+
+---- not operators ----------------
+
+SELECT * FROM students WHERE email is not NULL
+
+SELECT COALESCE(email,'email') from students
