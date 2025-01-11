@@ -28,6 +28,8 @@ ALTER Table person3 alter COLUMN email_address set not null
 -- delete a table
 -- delete entire table data
 -- order by ,DISTINCT, where ,group by
+-- update
+--like ilike ,limit, offset, between ,in ,not
 
 alter table test_table
 add constraint UNIQUE_test_table_name UNIQUE (name)

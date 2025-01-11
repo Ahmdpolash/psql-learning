@@ -221,3 +221,7 @@ SELECT * FROM students LIMIT 5 OFFSET 5 * 1
 SELECT * FROM students
 
 DELETE FROM students where grade = 'B'
+
+----------------- todo : 'UPDATE'----------------
+
+UPDATE students SET grade = 'A+' WHERE grade = 'C'
