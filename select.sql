@@ -210,3 +210,14 @@ WHERE
 
 ----------------- todo ilike operator (not case sensitive)----------------
 SELECT * FROM students WHERE first_name ilike 'j%'
+
+---------todo Pagination with Limit Offset and Data Deletion in PostgreSQL------------
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1
+
+------------------todo 'DELETE'------------------
+SELECT * FROM students
+
+DELETE FROM students where grade = 'B'
