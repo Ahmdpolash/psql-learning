@@ -225,3 +225,12 @@ DELETE FROM students where grade = 'B'
 ----------------- todo : 'UPDATE'----------------
 
 UPDATE students SET grade = 'A+' WHERE grade = 'C'
+
+
+
+
+SELECT age FROM students 
+
+
+
+
