@@ -217,14 +217,13 @@ VALUES (
 
 ---------------------todo::  practice task --------------------------------
 
--- //? 1.inner join to retrive employee and department information
+-- //? 1.show department name with average salary
 -- //? 2.show department name with average salary
 -- //? 3.count employee in each department
+-- //? 4.find the department name with highest average salary
+-- //? 5.count employees hired each year
 
-
-
-
--- task - 1
+-- task - 1 :: show department name with average salary
 SELECT *
 from employees as e
     JOIN departments as d ON e.department_id = d.department_id;
@@ -234,25 +233,43 @@ from employees as e
     JOIN departments USING (department_id);
 -- shortcut way (using)
 
--- task - 2
+-- task - 2:: show department name with average salary
 
 SELECT department_name, round(avg(salary)) as avg_salary
 FROM employees
     JOIN departments USING (department_id)
 GROUP BY
     department_name
-ORDER BY avg_salary ASC
 
+-- task - 3 :: count employee in each department
 
-
--- task - 3
-
-SELECT department_name, count(*) as total_employee 
+SELECT
+    department_name,
+    count(*) as total_employee
 FROM employees
     JOIN departments USING (department_id)
 GROUP BY
     department_name
 
+---- task - 4 : find the department name with highest average salary
+
+SELECT department_name, round(avg(salary)) as avg_salary
+FROM employees
+    JOIN departments USING (department_id)
+GROUP BY
+    department_name
+ORDER BY avg_salary DESC
+LIMIT 1
+
+---- task - 5 : count employees hired each year
+
+SELECT extract(
+        YEAR
+        from hire_date
+    ) as hire_year, count(*)
+from employees
+GROUP BY
+    hire_year;
 
 SELECT * from employees
 
