@@ -52,10 +52,14 @@ SELECT * from post as p
 INSERT INTO post(id,title,user_id) VALUES 
     (5,' this is a test table', NULL)
 
-
+ 
 SELECT * FROM post as p 
     LEFT JOIN "user" as u ON p.user_id = u.id
 
 
 SELECT * FROM post as p 
     RIGHT JOIN "user" as u ON p.user_id = u.id
+
+
+SELECT * FROM post as p
+FULL OUTER JOIN "user" u on p.user_id = u.id;
