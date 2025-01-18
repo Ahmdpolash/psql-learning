@@ -315,3 +315,4 @@ SELECT extract(
     ) as month, sum(total_amount)
 from orders WHERE(extract(year from order_date)=2022)
 GROUP BY (month)
+
