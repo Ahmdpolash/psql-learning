@@ -1,7 +1,5 @@
 ------------------------ SUB QUERY --------------------------------
 
-
-
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     employee_name VARCHAR(50) NOT NULL,
@@ -204,4 +202,25 @@ DROP TABLE employees;
 
 --Retrieve all employees whose salary is greater than the highest salary of the HR department
 
-SELECT * FROM employees WHERE salary > (SELECT max(salary) FROM employees where department_name = 'HR')
+SELECT *
+FROM employees
+WHERE
+    salary > (
+        SELECT max(salary)
+        FROM employees
+        where
+            department_name = 'HR'
+    )
+
+-- Can return a single value
+-- Can return multiple rows
+-- Can return a single column
+
+-- we can use sub queries to from , where , join , etc clauses 
+
+SELECT *,(SELECT sum(salary) as max_salary FROM employees) from employees
+
+SELECT employee_name, salary, department_name 
+FROM employees 
+WHERE department_name in 
+(SELECT department_name FROM employees WHERE department_name LIKE '%R%');
