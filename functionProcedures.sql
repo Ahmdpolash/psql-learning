@@ -46,3 +46,4 @@ $$
 SELECT delete_employee_by_id (10)
 
 SELECT * from employees;
+
