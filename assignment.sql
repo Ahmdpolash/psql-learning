@@ -75,7 +75,7 @@ CREATE TABLE courses (
     course_id SERIAL PRIMARY KEY,
     course_name VARCHAR(50) NOT NULL,
     credits INT
-) 
+)
 
 -- insert values
 INSERT INTO
@@ -85,7 +85,6 @@ VALUES ('Next.Js', 3),
     ('Databases', 3),
     ('Prisma', 3)
 
-
 --//?---------- enrollment table----------------
 CREATE TABLE enrollments (
     enrollment_id INT PRIMARY KEY,
@@ -93,12 +92,58 @@ CREATE TABLE enrollments (
     course_id INT REFERENCES courses (course_id)
 )
 
-INSERT INTO enrollments (enrollment_id, student_id, course_id) 
-VALUES 
-    (1, 1, 1),
+INSERT INTO
+    enrollments (
+        enrollment_id,
+        student_id,
+        course_id
+    )
+VALUES (1, 1, 1),
     (2, 1, 2),
     (3, 2, 1),
     (4, 3, 2);
+
+--- //! QUERY ONE ANSWER----------
+
+
+INSERT INTO
+    students (
+        student_name,
+        age,
+        email,
+        frontend_mark,
+        backend_mark,
+        status
+    )
+VALUES (
+        'Polash',
+        20,
+        'polash@gmail.com',
+        45,
+        50,
+        NULL
+    )
+
+
+
+
+--- //! QUERY TWO ANSWER----------
+
+select student_name from students
+-- JOIN enrollments on students.student_id = enrollments.student_id
+-- JOIN courses ON enrollments.course_id = courses.course_id
+join enrollments USING(student_id)
+join courses USING(course_id)
+WHERE course_name = 'Next.Js'
+
+
+
+select * from students;
+
+
+
+
+
 
 
 select * from students;

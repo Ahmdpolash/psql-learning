@@ -1,0 +1,24 @@
+/* 
+//? QUERY :  1 
+Insert a new student record with the following details:
+Name: YourName
+Age: YourAge
+Email: YourEmail
+Frontend-Mark: YourMark
+Backend-Mark: YourMark
+Status: NULL 
+*/
+
+
+Query 2:
+Retrieve the names of all students who are enrolled in the course titled 'Next.js'.
+
+
+Query 3:
+Update the status of the student with the highest total (frontend_mark + backend_mark) to 'Awarded'.
+
+Query 4:
+Delete all courses that have no students enrolled.
+
+Query 5:
+Retrieve the names of students using a limit of 2, starting from the 3rd student.
