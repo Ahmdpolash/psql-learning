@@ -164,8 +164,21 @@ WHERE
 
 --- //! QUERY 5 ANSWER----------
 
+SELECT student_name
+FROM students
+ORDER BY student_id
+LIMIT 2
+OFFSET
+    2
 
-SELECT student_name FROM students ORDER BY student_id LIMIT 2 OFFSET 2 
+--- //! QUERY 6 ANSWER----------
+-- Retrieve the course names and the number of students enrolled in each course.
+
+SELECT course_name, count(*)
+FROM courses
+    JOIN enrollments USING (course_id)
+GROUP BY
+    course_name
 
 select * from students;
 
