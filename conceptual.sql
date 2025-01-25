@@ -58,12 +58,23 @@ SELECT sum(salary) as total_salary FROM employees
 JOIN departments USING(department_id)
 WHERE department_name ='Engineering'
 
+
+-- sort employees by their hire date  in descending order
 SELECT * FROM employees
 ORDER BY hire_date DESC
 
 
+-- find those employees whose last name starts with 'J'
+SELECT * FROM employees WHERE last_name LIKE 'J%';
 
 
+-- find employees hired between 2015-01-01 and 2018-01-01
+SELECT * FROM employees WHERE hire_date BETWEEN '2015-01-01' AND '2018-01-01';
+
+
+-- use alter to add a new column on employees table 
+ALTER Table employees 
+ADD COLUMN phone_number VARCHAR(15);
 
 SELECT * FROM departments;
 

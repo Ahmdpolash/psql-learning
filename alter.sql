@@ -23,9 +23,9 @@ values (
         45,
         'test@gmail.com'
     )
-    -- rename table column name
-ALTER Table person2
-RENAME COLUMN persorn_age to person_age
+
+-- rename table column name
+ALTER Table person2 RENAME COLUMN persorn_age to person_age
 
 --update a existign data type
 ALTER Table person2 alter COLUMN user_name type VARCHAR(30)
@@ -51,4 +51,15 @@ ALTER Table person2 DROP constraint unique_person2_person_age
 DROP TABLE person2
 
 -- to delete entire table data
-TRUNCATE TABLE person2
+TRUNCATE TABLE person2 
+
+/*
+
+Add a new column: ALTER TABLE table_name ADD COLUMN column_name datatype; 
+Drop a column: ALTER TABLE table_name DROP COLUMN column_name; 
+Rename a column: ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name; 
+Change data type: ALTER TABLE table_name ALTER COLUMN column_name TYPE new_datatype; 
+Set default value: ALTER TABLE table_name ALTER COLUMN column_name SET DEFAULT value; 
+Add constraints: ALTER TABLE table_name ADD CONSTRAINT constraint_name CHECK (condition); 
+
+*/
