@@ -183,7 +183,9 @@ GROUP BY
 --- //! QUERY 7 ANSWER----------
 SELECT avg(age) avg_age FROM students 
 
-
+--- //! QUERY 8 ANSWER----------
+select student_name from students
+WHERE email LIKE '%example.com'
 
 select * from students;
 

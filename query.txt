@@ -29,3 +29,7 @@ Retrieve the course names and the number of students enrolled in each course.
 Query 7:
 Calculate and display the average age of all students.
 
+
+Query 8:
+Retrieve the names of students whose email addresses contain 'example.com'.
+
