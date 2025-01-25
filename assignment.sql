@@ -132,10 +132,27 @@ VALUES (
 select student_name from students
 -- JOIN enrollments on students.student_id = enrollments.student_id
 -- JOIN courses ON enrollments.course_id = courses.course_id
-join enrollments USING(student_id)
-join courses USING(course_id)
+ join enrollments USING(student_id)
+ join courses USING(course_id)
 WHERE course_name = 'Next.Js'
 
+
+
+--- //! QUERY 3 ANSWER----------
+
+--Update the status of the student with the highest total (frontend_mark + backend_mark) to 'Awarded'.
+
+UPDATE students 
+set status = 'awarded'
+WHERE student_id = (SELECT student_id FROM students ORDER BY (frontend_mark+backend_mark) DESC LIMIT 1)
+
+
+
+
+--- //! QUERY 4 ANSWER----------
+-- Delete all courses that have no students enrolled.
+
+DELETE FROM 
 
 
 select * from students;
