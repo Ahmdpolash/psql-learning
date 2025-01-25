@@ -1,3 +1,4 @@
+-- Active: 1736510814457@@127.0.0.1@5432@ph
 ---//?--------- students table--------------
 
 CREATE TABLE students (
@@ -105,7 +106,6 @@ VALUES (1, 1, 1),
 
 --- //! QUERY ONE ANSWER----------
 
-
 INSERT INTO
     students (
         student_name,
@@ -124,44 +124,48 @@ VALUES (
         NULL
     )
 
-
-
-
 --- //! QUERY TWO ANSWER----------
 
-select student_name from students
--- JOIN enrollments on students.student_id = enrollments.student_id
--- JOIN courses ON enrollments.course_id = courses.course_id
- join enrollments USING(student_id)
- join courses USING(course_id)
-WHERE course_name = 'Next.Js'
-
-
+select student_name
+from
+    students
+    -- JOIN enrollments on students.student_id = enrollments.student_id
+    -- JOIN courses ON enrollments.course_id = courses.course_id
+    join enrollments USING (student_id)
+    join courses USING (course_id)
+WHERE
+    course_name = 'Next.Js'
 
 --- //! QUERY 3 ANSWER----------
 
 --Update the status of the student with the highest total (frontend_mark + backend_mark) to 'Awarded'.
 
-UPDATE students 
-set status = 'awarded'
-WHERE student_id = (SELECT student_id FROM students ORDER BY (frontend_mark+backend_mark) DESC LIMIT 1)
-
-
-
+UPDATE students
+set
+    status = 'awarded'
+WHERE
+    student_id = (
+        SELECT student_id
+        FROM students
+        ORDER BY (frontend_mark + backend_mark) DESC
+        LIMIT 1
+    )
 
 --- //! QUERY 4 ANSWER----------
 -- Delete all courses that have no students enrolled.
 
-DELETE FROM 
+DELETE FROM courses
+WHERE
+    course_Id NOT IN (
+        SELECT DISTINCT
+            course_id
+        FROM enrollments
+    )
+
+--- //! QUERY 5 ANSWER----------
 
 
-select * from students;
-
-
-
-
-
-
+SELECT student_name FROM students ORDER BY student_id LIMIT 2 OFFSET 2 
 
 select * from students;
 

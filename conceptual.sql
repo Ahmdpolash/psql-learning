@@ -76,6 +76,9 @@ SELECT * FROM employees WHERE hire_date BETWEEN '2015-01-01' AND '2018-01-01';
 ALTER Table employees 
 ADD COLUMN phone_number VARCHAR(15);
 
+
+ALTER Table employees DROP COLUMN is_active
+
 SELECT * FROM departments;
 
 SELECT * FROM employees;
