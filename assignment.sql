@@ -180,6 +180,11 @@ FROM courses
 GROUP BY
     course_name
 
+--- //! QUERY 7 ANSWER----------
+SELECT avg(age) avg_age FROM students 
+
+
+
 select * from students;
 
 SELECT * from courses
